@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 public class Rombus{
     public static void main(String args[]){
