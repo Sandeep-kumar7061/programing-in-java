@@ -30,27 +30,26 @@ public class MergeSortedLists {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
 
-        System.out.print("Enter the number of elements in the first sorted list: ");
-        int n1 = scanner.nextInt();
-        List<Integer> list1 = new ArrayList<>();
-        System.out.println("Enter elements for the first sorted list:");
-        for (int i = 0; i < n1; i++) {
-            list1.add(scanner.nextInt());
+            System.out.print("Enter the number of elements in the first sorted list: ");
+            int n1 = scanner.nextInt();
+            List<Integer> list1 = new ArrayList<>();
+            System.out.println("Enter elements for the first sorted list:");
+            for (int i = 0; i < n1; i++) {
+                list1.add(scanner.nextInt());
+            }
+
+            System.out.print("Enter the number of elements in the second sorted list: ");
+            int n2 = scanner.nextInt();
+            List<Integer> list2 = new ArrayList<>();
+            System.out.println("Enter elements for the second sorted list:");
+            for (int i = 0; i < n2; i++) {
+                list2.add(scanner.nextInt());
+            }
+
+            List<Integer> mergedList = mergeLists(list1, list2);
+            System.out.println("Merged Sorted List: " + mergedList);
         }
-
-        System.out.print("Enter the number of elements in the second sorted list: ");
-        int n2 = scanner.nextInt();
-        List<Integer> list2 = new ArrayList<>();
-        System.out.println("Enter elements for the second sorted list:");
-        for (int i = 0; i < n2; i++) {
-            list2.add(scanner.nextInt());
-        }
-
-        scanner.close();
-
-        List<Integer> mergedList = mergeLists(list1, list2);
-        System.out.println("Merged Sorted List: " + mergedList);
     }
 }
